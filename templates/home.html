@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<body style="padding: 200px;">
+  <a href="{{url_for('createlist')}}">
+  <h1>Create Task List</h1>
+  </a>
+    <a href="{{url_for('all_lists')}}">
+  <h1 style="padding-top: 15px">View Task List</h1>
+  </a>
+</body>
+</html>

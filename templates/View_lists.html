@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+<body>
+  <div style="padding-top:100px">
+    <h1 class="container" style="font-weight: bold;">{{ title }}</h1>
+    {% for task in task_list %}
+      <label class="container">{{task}}
+<!--        <input type="checkbox">-->
+<!--        <span class="checkmark"></span>-->
+      </label>
+    {% endfor %}
+      <div style="padding-left:335px">
+        <a href="{{url_for('home')}}">
+            <button type="button" class="btn btn-md btn-outline-secondary border"> Home </button>
+        </a>
+      </div>
+  </div>
+</body>
+</html>

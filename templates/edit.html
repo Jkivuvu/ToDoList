@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<body style="padding: 200px;">
+    {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    <div style="padding-top: 10px">
+    <a href="{{url_for('lists')}}">
+    <button type="button" class="btn btn-md btn-outline-secondary border"> Done </button>
+    </a>
+    </div>
+    {% for task in task_list %}
+        {% if task in task_list %}
+            <label class="container">{{task}}
+<!--              <input type="checkbox">-->
+<!--              <span class="checkmark"></span>-->
+            </label>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>

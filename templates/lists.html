@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+<body>
+<div class="container" style="padding-top:200px;">
+    <h1 style="padding-top:100px padding-bottom:100px;">All Lists</h1>
+    {% for i in sql_db %}
+        {% if i !='id' %}
+        <a href="{{ url_for('show_list', list_id=i)}}">
+            <h3>{{i}}</h3>
+        </a>
+        {% endif %}
+    {% endfor %}
+    <div style="padding-top:50px">
+    <a href="{{url_for('createlist')}}">
+        <button type="button" class="btn btn-md btn-outline-secondary border">Create New List</button>
+    </a>
+    </div>
+</div>
+</body>
+</html>
