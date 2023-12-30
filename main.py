@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
+from dotenv import load_dotenv
 from flask_bootstrap import Bootstrap5
 from forms import Task, Registerform, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -7,6 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 import pandas as pd
 import os
+load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('APPKEY')
